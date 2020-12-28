@@ -44,6 +44,11 @@ License URI: http://themeforest.net/licenses/regular_extended
   transform: translate(0, 0);
 }
 
+.cv {
+  border: 1px solid #000;
+  padding: 10px;
+}
+
 .typography-box {
   background: #e6e6e6;
   padding-top: 85px;

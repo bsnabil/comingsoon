@@ -45,8 +45,13 @@ License URI: http://themeforest.net/licenses/regular_extended
 }
 
 .cv {
-  border: 1px solid #000;
+  border: 1px solid gray;
   padding: 10px;
+
+}
+
+.cv:hover {
+  border: 1ps solid #000;
 }
 
 .typography-box {

@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: comingsoon-page
-        image: nginx:latest
+        image: apache:latest
         ports:
         - containerPort: 80

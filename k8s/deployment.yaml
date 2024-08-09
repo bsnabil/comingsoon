@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: comingsoon-page
-        image: triple3a/comingsoon-page:latest
+        image: nginx:latest
         ports:
         - containerPort: 80

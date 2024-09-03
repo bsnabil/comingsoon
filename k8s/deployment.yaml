@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: comingsoon-page
-        image: httpd:latest
+        image: portainer/agent
         ports:
         - containerPort: 80

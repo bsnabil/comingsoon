@@ -1,14 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:13
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "password"
+            - name: POSTGRES_DB
+              value: "postgres_db"
+---
 apiVersion: v1
 kind: Service
 metadata:
-  name: comingsoon-page
-  namespace: comingsoon
+  name: postgres-service
+  namespace: nodejs-app
 spec:
   selector:
-    app: comingsoon-page
-# ClusterIP (default), LoadBalancer (works on cloud), NodePort (most used)
-  type: NodePort
+    app: postgres
   ports:
-  - protocol: TCP
-    port: 80 
-    targetPort: 80 
+    - name: postgres
+      port: 5432
+      targetPort: 5432
+  type: NodePort

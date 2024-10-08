@@ -1,5 +1,13 @@
-FROM tomcat:8-jre8
+FROM node:14-alpine
 
-MAINTAINER "info@test.com"
+WORKDIR /usr/src/app
 
-COPY ./webapp /usr/local/tomcat/webapps
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8000
+
+CMD [ "node", "app.js" ]
